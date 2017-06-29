@@ -1,3 +1,3 @@
 # Spychat
-A Secret Messege sending way
+A Secret Messege sending way.
 Kindly open the Spy Chat By changing the branch from master to spchat...
