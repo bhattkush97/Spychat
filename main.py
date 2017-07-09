@@ -25,20 +25,20 @@ existing = raw_input(question)
 def add_status():
     updated_status_msg = None
 
-    if spy.current_status_msg != None:
+    if spy.current_status_message != None:
 
-        print 'Your current status message is %s \n' % spy.current_status_msg
+        print 'Your current status message is %s \n' % spy.current_status_message
     else:
         print 'You don\'t have any status message currently \n'
 
     default = raw_input("Do you want to select from the older status (y/n)? ")
 
     if default.upper() == "N":
-        new_status_msg = raw_input("What status message do you want to set? ")
+        new_status_message = raw_input("What status message do you want to set? ")
 
-        if len(new_status_msg) > 0:
-            STATUS_MESSAGES.append(new_status_msg)
-            updated_status_msg = new_status_msg
+        if len(new_status_message) > 0:
+            STATUS_MESSAGES.append(new_status_message)
+            updated_status_msg = new_status_message
 
     elif default.upper() == 'Y':
 
@@ -48,10 +48,10 @@ def add_status():
             print '%d. %s' % (item_position, msg)
             item_position = item_position + 1
 
-        msg_selection = int(raw_input("\nChoose from the above messages "))
+        message_selection = int(raw_input("\nChoose from the above messages "))
 
-        if len(STATUS_MESSAGES) >= msg_selection:
-            updated_status_msg = STATUS_MESSAGES[msg_selection - 1]
+        if len(STATUS_MESSAGES) >= message_selection:
+            updated_status_msg = STATUS_MESSAGES[message_selection - 1]
 
     else:
         print 'The option you chose is not valid! Press either y or n.'
@@ -183,7 +183,7 @@ def start_chat(spy):
                 menu_choice = int(menu_choice)
 
                 if menu_choice == 1:
-                    spy.current_status_msg = add_status()
+                    spy.current_status_message = add_status()
                 elif menu_choice == 2:
                     no_of_friends = add_friend()
                     print 'You have %d friends' % no_of_friends
